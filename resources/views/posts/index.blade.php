@@ -53,7 +53,7 @@
                         <!-- Column -->
                         <div class="col-lg-3 col-md-6">
                             <div class="card card-shadow">
-                                <img style="width:100%" src={!! asset ('image-assets/top-brand/wakai.jpg')!!}></i>
+                                <a href="javascript:void(0)" class="service-24"> <img src={!! asset ('image-assets/icon-sepatu/wakai.png')!!}></i>
                                     <h6 class="ser-title">WAKAI</h6>
                                 </a>
                             </div>
@@ -62,7 +62,7 @@
                         <!-- Column -->
                         <div class="col-lg-3 col-md-6">
                             <div class="card card-shadow">
-                                <img style="width:100%" src={!! asset ('image-assets/top-brand/ardiles.png') !!}></i>
+                                <a href="javascript:void(0)" class="service-24"> <img src={!! asset ('image-assets/icon-sepatu/ardiles.png') !!}></i>
                                     <h6 class="ser-title">Ardiles</h6>
                                 </a>
                             </div>
@@ -71,7 +71,7 @@
                         <!-- Column -->
                         <div class="col-lg-3 col-md-6">
                             <div class="card card-shadow">
-                                <img style="width:100%" src={!! asset ('image-assets/top-brand/carvil.png') !!}></i>
+                                <a href="javascript:void(0)" class="service-24"> <img src={!! asset ('image-assets/icon-sepatu/carvil.png') !!}></i>
                                     <h6 class="ser-title">Carvil</h6>
                                 </a>
                             </div>
@@ -80,7 +80,7 @@
                         <!-- Column -->
                         <div class="col-lg-3 col-md-6">
                             <div class="card card-shadow">
-                                <img style="width:100%" src={!! asset ('image-assets/top-brand/eagle.png') !!}></i>
+                                <a href="javascript:void(0)" class="service-24"> <img src={!! asset ('image-assets/icon-sepatu/eagle.png') !!}></i>
                                     <h6 class="ser-title">Eagle</h6>
                                 </a>
                             </div>
@@ -89,7 +89,7 @@
                         <!-- Column -->
                         <div class="col-lg-3 col-md-6">
                             <div class="card card-shadow">
-                                <img style="width:100%" src={!! asset ('image-assets/top-brand/brodo.jpg') !!}></i>
+                                <a href="javascript:void(0)" class="service-24"> <img src={!! asset ('image-assets/icon-sepatu/brodo.png') !!}></i>
                                     <h6 class="ser-title">Bro.do</h6>
                                 </a>
                             </div>
@@ -98,7 +98,7 @@
                         <!-- Column -->
                         <div class="col-lg-3 col-md-6">
                             <div class="card card-shadow">
-                                <img style="width:100%" src={!! asset ('image-assets/top-brand/Kasogi.jpg') !!}></i>
+                                <a href="javascript:void(0)" class="service-24"> <img src={!! asset ('image-assets/icon-sepatu/kasogi.png') !!}></i>
                                     <h6 class="ser-title">Kasogi</h6>
                                 </a>
                             </div>
@@ -107,7 +107,7 @@
                         <!-- Column -->
                         <div class="col-lg-3 col-md-6">
                             <div class="card card-shadow">
-                                <img style="width:100%" src={!! asset ('image-assets/top-brand/yongki-komaladi.png') !!}></i>
+                                <a href="javascript:void(0)" class="service-24"> <img src={!! asset ('image-assets/icon-sepatu/yongki-komaladi.png') !!}></i>
                                     <h6 class="ser-title">Yongki Komaladi</h6>
                                 </a>
                             </div>
@@ -116,7 +116,7 @@
                         <!-- Column -->
                         <div class="col-lg-3 col-md-6">
                             <div class="card card-shadow">
-                                <img style="width:100%" src={!! asset ('image-assets/top-brand/tomkins.jpg') !!}></i>
+                                <a href="javascript:void(0)" class="service-24"> <img src={!! asset ('image-assets/icon-sepatu/tomkins.png') !!}></i>
                                     <h6 class="ser-title">Tomkins</h6>
                                 </a>
                             </div>

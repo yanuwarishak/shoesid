@@ -11,8 +11,9 @@
     @endif
 -->
 
-<p></p>
-
+<br>
+<br>
+<br>
 <h3>Your Cart is empty</h3>
 <a href='/'>Back to Shop</p>
 

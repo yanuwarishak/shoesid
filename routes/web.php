@@ -14,12 +14,12 @@
 /*
 
 Route::get('/please', function(){
-    return "<h1>resist yourself from doing useless thing<h1>";
+    return "<h1> to <h1>";
 });
 
 
 Route::get('/users/{id}/{name}', function($id, $name){
-    return 'This is user '.$name. ' with dick size of '.$id;
+    return 'This is user '.$name. ' with shoes size of '.$id;
 });
 
 */
@@ -36,7 +36,9 @@ Route::resource('posts','PostsController');
 Auth::routes();
 
 //Checkout Controller
-Route::get('/posts/{{$id}}/checkout', 'CheckoutsController@checkout');
+Route::get('/posts/checkout', 'CheckoutsController@index');
+Route::resource('posts','PostsController');
+Auth::routes();
 
 //Dashboard Controller
 Route::get('/dashboard', 'DashboardController@index');

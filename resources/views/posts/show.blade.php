@@ -9,14 +9,12 @@
                     <br><br>
                     {!!$post->body!!}
                 </div>
-            <hr>
         </div>
 
         <p>Harga : {{$post->harga}}</p>
         
         <hr>
-        <a style="width:50%" class="btn btn-info-gradiant" href="/posts/{{$post->id}}"> Beli </a>
-        <a style="width:50%" class="btn btn-info-gradiant" href="/posts/{{$post->id}}"> Checkout </a>
+        <a style="width:50%" class="btn btn-info-gradiant" href="/posts/checkout"> Checkout </a>
         <a style="width:50%" class="btn btn-info-gradiant" href="/posts/{{$post->id}}"> Add to Cart </a>
 
         <div>

@@ -18,9 +18,27 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ asset('css/animation/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- This is for the animation CSS -->
+    <link href="{{ asset('css/animation/aos/dist/aos.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/animation/prism/prism.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/animation/perfect-scrollbar/dist/css/perfect-scrollbar.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/animation/bootstrap-touch-slider/bootstrap-touch-slider.css')}}" rel="stylesheet" media="all">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/customs-wrapkit.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/shop/shop.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/style.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/sliders/slider10.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/headers/headers1-10.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/headers/headers11-20.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/shop/shop.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/features/features21-30.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/footers/footers.css')}}" rel="stylesheet">
+
 
     <style>
             html, body {
