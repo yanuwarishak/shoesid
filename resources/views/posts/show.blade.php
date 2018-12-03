@@ -4,7 +4,7 @@
         <div class="container" style="padding-top:75px">
             <h1>{{$post->title}}</h1>
             <b>by {{$post -> user -> name}}</b>
-                 <div class="owl-carousel owl-theme image-slide">
+                 <div class="container">
                     <img style="width:25%" src="/storage/cover_images/{{$post -> cover_image}}">
                     <br><br>
                     {!!$post->body!!}
@@ -16,6 +16,8 @@
         
         <hr>
         <a style="width:50%" class="btn btn-info-gradiant" href="/posts/{{$post->id}}"> Beli </a>
+        <a style="width:50%" class="btn btn-info-gradiant" href="/posts/{{$post->id}}"> Checkout </a>
+        <a style="width:50%" class="btn btn-info-gradiant" href="/posts/{{$post->id}}"> Add to Cart </a>
 
         <div>
             @if(!Auth::guest())
