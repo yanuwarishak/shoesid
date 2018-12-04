@@ -31,4 +31,8 @@ class User extends Authenticatable
     public function posts(){
         return $this -> hasMany('App\Post');
     }
+
+    public function cart(){
+        return $this -> hasMany('App\Cart');
+    }
 }

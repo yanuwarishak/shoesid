@@ -26,6 +26,9 @@ class CartsController extends Controller
         $cart -> product_id = $request -> input('barang_id');
         $cart -> user_id = $request -> input('user_id');
         $cart -> size = $request -> input('size');
+        $cart -> harga = $request -> input('harga');
+        $cart -> title = $request -> input('title');
+        $cart -> cover_image = $request -> input('cover_image');
         $cart -> save();
         return redirect('/cart') -> with('success', 'Item Added to Cart');
 
@@ -35,10 +38,10 @@ class CartsController extends Controller
 
     public function index()
     {
-        //
-        $carts = Cart::orderBy('created_at');
-        $posts = Post::orderBy('created_at','desc') -> paginate(4);
-        return view('orders.cart')->with('posts', 'carts', $carts, $posts);
+        $carts = Cart::all();
+        return view('orders.cart')->with('carts', $carts);
+        //$posts = Post::orderBy('created_at','desc') -> paginate(4);
+        //return view('orders.cart')->with('posts', $posts);
       
     }
 

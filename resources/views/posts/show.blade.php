@@ -20,6 +20,9 @@
             @csrf
             <input type="hidden" value="{{$post->id}}" name="barang_id">
             <input type="hidden" value="1" name="user_id">
+            <input type="hidden" value="{{$post->harga}}" name="harga">
+            <input type="hidden" value="{{$post->cover_image}}" name="cover_image">
+            <input type="hidden" value="{{$post->title}}" name="title">            
             <input type="hidden" value="1" name="size">
             <input type="submit" style="width:50%" class="btn btn-info-gradiant" value=" Add to Cart"> 
         </form>

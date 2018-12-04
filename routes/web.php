@@ -12,9 +12,9 @@
 */
 
 //Pages Controller
-Route::get('/home', 'PagesController@home');
+//Route::get('/home', 'PagesController@home');
 //Route::get('/about', 'PagesController@about');
-Route::get('/services', 'PagesController@services');
+//Route::get('/services', 'PagesController@services');
 
 //Post Controller
 Route::get('/', 'PostsController@index');
@@ -25,6 +25,7 @@ Auth::routes();
 //Cart Controller
 Route::get('/cart','CartsController@index');
 Route::post('/cart/add','CartsController@add');
+Route::resource('carts','PostsController');
 
 
 //Dashboard Controller
