@@ -1,9 +1,20 @@
 @extends('layouts.app')
 
-
+<div class="container-fluid">
+    <div class="banner-innerpage" style="background-image:url{!! asset ('public\image-assets\banner-bg4.jpg') !!}">
+        <div class="container">
+            <!-- Row  -->
+            <div class="row justify-content-center ">
+                <!-- Column -->
+                <div class="col-md-6 align-self-center text-center" data-aos="fade-down" data-aos-duration="1200">
+                <div class="spacer"></div>
+                <!-- Column -->
+            </div>
+        </div>
+    </div>
+</div>
 
 @section('content')
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-7 text-center">
@@ -25,9 +36,10 @@
                             <div class="card">
                                     <h5><a href="/posts/{{$post->id}}">{{$post->title}}</a></h5>
                                     <b>by {{$post -> user -> name}}</b>
-                                    <p class="font-weight-bold">Harga : {{$post->harga}}</p>
+                                    <h5 class="font-medium m-b-30"> Harga : {{$post->harga}}</h5>
                                     <p></p>
-                                    <a style="width:50%" class="btn btn-info-gradiant" href="/posts/{{$post->id}}"> Beli </a>     
+                                        <a style="width:50%" class="btn btn-info btn-sm" href="/posts/{{$post->id}}"> Beli </a>
+                                    <br>
                             </div>
                         </div>
                     @endforeach
@@ -37,7 +49,7 @@
 </div> 
             {{$posts->links()}}
         @else
-            <p>Gudang sepatu kita terbakar</p>
+            <p>No Product Available</p>
         @endif
 
         <div class="spacer feature24">

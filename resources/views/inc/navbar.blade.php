@@ -18,10 +18,11 @@
                   <a class="nav-link" href="/">Beranda<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/about">Tentang Kami</a>
+                    <a class="nav-link" href="/cart">Keranjang</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/services">Keranjang</a>
+                    <a class="nav-link" href="/about">Tentang Kami</a>
+                  
                 </li>
               </ul>
 

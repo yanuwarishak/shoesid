@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddCoverImageToPosts extends Migration
+class CreateCartsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class AddCoverImageToPosts extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table -> string('cover_image');
+        Schema::create('carts', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('user_id');
+            $table->string('product_id');
+            $table->string('size');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class AddCoverImageToPosts extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table -> dropColumn('cover_image');
-        });
+        Schema::dropIfExists('carts');
     }
 }
