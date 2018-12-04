@@ -15,13 +15,13 @@
 
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="/">Beranda<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/cart">Keranjang</a>
+                    <a class="nav-link" href="/cart">Cart</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/about">Tentang Kami</a>
+                    <a class="nav-link" href="/about">About Us</a>
                   
                 </li>
               </ul>
