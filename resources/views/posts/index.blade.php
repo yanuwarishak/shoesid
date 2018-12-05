@@ -1,18 +1,7 @@
 @extends('layouts.app')
-
-<div class="container-fluid">
-    <div class="banner-innerpage" style="background-image:url{!! asset ('public\image-assets\banner-bg4.jpg') !!}">
-        <div class="container">
-            <!-- Row  -->
-            <div class="row justify-content-center ">
-                <!-- Column -->
-                <div class="col-md-6 align-self-center text-center" data-aos="fade-down" data-aos-duration="1200">
-                <div class="spacer"></div>
-                <!-- Column -->
-            </div>
-        </div>
-    </div>
-</div>
+<br>
+<br>
+<br>
 
 @section('content')
 <div class="container">
@@ -38,7 +27,19 @@
                                     <b>by {{$post -> user -> name}}</b>
                                     <h5 class="font-medium m-b-30"> Harga : {{$post->harga}}</h5>
                                     <p></p>
-                                        <a style="width:50%" class="btn btn-info btn-sm" href="/posts/{{$post->id}}"> Beli </a>
+                                        <a style="width:50%" class="btn btn-info btn-sm" href="/posts/{{$post->id}}"> Detail </a>
+
+                                        <form action="/cart/add" method="POST" >
+                                            @csrf
+                                            <input type="hidden" value="{{$post->id}}" name="barang_id">
+                                            <input type="hidden" value="1" name="user_id">
+                                            <input type="hidden" value="{{$post->harga}}" name="harga">
+                                            <input type="hidden" value="{{$post->cover_image}}" name="cover_image">
+                                            <input type="hidden" value="{{$post->title}}" name="title">            
+                                            <input type="hidden" value="1" name="size">
+                                            <input type="submit" style="width:50%" class="btn btn-info-gradiant" value=" Add to Cart"> 
+                                        </form>
+                                        
                                     <br>
                             </div>
                         </div>
