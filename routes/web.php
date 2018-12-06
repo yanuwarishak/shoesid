@@ -18,14 +18,15 @@
 
 //Post Controller
 Route::get('/', 'PostsController@index');
+Route::get('/home', 'PostsController@index');
 Route::get('/posts/create', 'PostController@index');
 Route::resource('posts','PostsController');
 Auth::routes();
 
 //Cart Controller
-Route::get('/cart','CartsController@index');
+Route::get('/cart','CartsController@show');
 Route::post('/cart/add','CartsController@add');
-Route::resource('carts','PostsController');
+Route::resource('carts','CartsController');
 
 
 //Dashboard Controller

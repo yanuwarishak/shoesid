@@ -3,18 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Auth;
 use App\Cart;
 use App\Post;
+use App\User;
 use DB;
 
 class CartsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     public function add(Request $request)
     {
         // $user_id=$request->input('user_id');
@@ -30,7 +41,9 @@ class CartsController extends Controller
         $cart -> title = $request -> input('title');
         $cart -> cover_image = $request -> input('cover_image');
         $cart -> save();
-        return redirect('/cart') -> with('success', 'Item Added to Cart');
+        //return redirect('/cart') -> with('success', 'Item Added to Cart');
+
+        return redirect()->back()->with('success','Item Added to Cart');
 
 
     }
@@ -72,9 +85,15 @@ class CartsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $carts = null;
+        $user_id = auth() -> user()->id;
+        $user = User::find($user_id);
+        if ($user) {
+            $carts = Cart::where('user_id', $user_id)->get();
+        }
+        return view('orders.cart')->with('carts', $carts);
     }
 
     /**
@@ -108,6 +127,19 @@ class CartsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+    $cart = Cart::find($id);
+    /*
+    *       if(auth() -> user() -> id !==$cart -> user_id){
+    *          return redirect('/cart') -> with('error', 'Unauthorized Page');
+    *    }
+    *
+    *       $cart -> delete();
+    *      return redirect('/cart') -> with('success', 'Item Removed');
+    *
+    */
+    $cart -> delete();
+    return redirect('/cart') -> with('success', 'Item Removed'); 
     }
+       
 }

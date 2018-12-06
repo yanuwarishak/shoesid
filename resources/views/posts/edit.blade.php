@@ -8,6 +8,10 @@
                 {{Form::text('title', $post -> title, ['class' => 'form-control', 'placeholder' => 'Title'])}}
             </div>
             <div class="form-group">
+                {{Form::label('harga', 'Harga')}}
+                {{Form::text('harga', $post -> harga, ['class' => 'form-control', 'placeholder' => 'Harga'])}}
+            </div>
+            <div class="form-group">
                 {{Form::label('body', 'Body')}}
                 {{Form::textarea('body', $post -> body, ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Body Text'])}}
             </div>
