@@ -13,7 +13,7 @@
 
 //Pages Controller
 //Route::get('/home', 'PagesController@home');
-//Route::get('/about', 'PagesController@about');
+Route::get('/about', 'PagesController@about');
 //Route::get('/services', 'PagesController@services');
 
 //Post Controller
