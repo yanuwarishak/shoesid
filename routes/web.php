@@ -30,3 +30,19 @@ Route::resource('carts','PostsController');
 
 //Dashboard Controller
 Route::get('/dashboard', 'DashboardController@index');
+
+Auth::routes();
+
+//Notadmin Controller (nama filenya masih home)
+Route::get('/home', 'HomeController@index')
+    ->name('home');
+
+//Admin Controller
+Route::get('/dashboard',"AdminController@admin")
+    ->middleware('is_admin')
+    ->name('admin');
+
+//Register Seller
+Route::get('/regseller',function(){
+    return view('auth.regseller');
+});

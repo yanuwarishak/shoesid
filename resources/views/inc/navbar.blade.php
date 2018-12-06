@@ -21,8 +21,10 @@
                     <a class="nav-link" href="/cart">Cart</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/about">About Us</a>
-                  
+                    <a class="nav-link" href="/about">About Us</a>  
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Become Seller</a>  
                 </li>
               </ul>
 
