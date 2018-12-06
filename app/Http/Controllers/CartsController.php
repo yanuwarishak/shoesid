@@ -33,9 +33,10 @@ class CartsController extends Controller
         // $
 
         //
+        $id = \Auth::user()->id;
         $cart = new Cart;
         $cart -> product_id = $request -> input('barang_id');
-        $cart -> user_id = $request -> input('user_id');
+        $cart -> user_id = $id;
         $cart -> size = $request -> input('size');
         $cart -> harga = $request -> input('harga');
         $cart -> title = $request -> input('title');

@@ -14,6 +14,7 @@
         <!-- column  -->
          <div class="col-lg-12">
             <div class="row shop-listing">
+                
                 @if(count($posts) > 0)
                     @foreach ($posts as $post)
                         <div class="col-lg-3">
@@ -31,7 +32,6 @@
                                         <form action="/cart/add" method="POST" >
                                             @csrf
                                             <input type="hidden" value="{{$post->id}}" name="barang_id">
-                                            <input type="hidden" value="1" name="user_id">
                                             <input type="hidden" value="{{$post->harga}}" name="harga">
                                             <input type="hidden" value="{{$post->cover_image}}" name="cover_image">
                                             <input type="hidden" value="{{$post->title}}" name="title">            

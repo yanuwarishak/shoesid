@@ -28,6 +28,10 @@ Route::get('/cart','CartsController@show');
 Route::post('/cart/add','CartsController@add');
 Route::resource('carts','CartsController');
 
+//Checkout Controller
+Route::get('/checkout','CheckoustController@index');
+Route::resource('checkout','CheckoutsController');
+
 
 //Dashboard Controller
 Route::get('/dashboard', 'DashboardController@index');

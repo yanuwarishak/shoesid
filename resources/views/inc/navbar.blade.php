@@ -48,6 +48,17 @@
                         </a>
                         
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            {{-- @if(!Auth::guest())
+                                @if(Auth::user()-> id == $post -> user_id)
+                                <a href="/posts/{{$post -> id}}/edit" class="btn btn-warning">Edit</a>
+                                {!!Form::open (['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull-right' ])!!} 
+                                    {{Form::hidden ('_method','DELETE')}}
+                                    {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+                                {!!Form::close()!!}
+                                @endif
+                            @endif --}}
+                            <a class="dropdown-item" href="/cart">Your Cart</a>
+                            <a class="dropdown-item" href="/dashboard">Dashboard</a>
                             <a class="dropdown-item" href="/dashboard">Dashboard</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
