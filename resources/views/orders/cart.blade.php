@@ -13,8 +13,10 @@
     <div class="row m-t-30">
         <!-- column  -->
         <div class="col-lg-12">
+            <?php $total=0; ?>
             @if(count($carts) > 0)
                 @foreach ($carts as $cart)
+                <?php $total += $cart->harga; ?>
                 <div class="row shop-listing">
                     <div class="col-lg-3">
                         <div class="card">
@@ -35,8 +37,12 @@
                     {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
                 {!!Form::close()!!}
                 @endif
+               
             @endif
                 @endforeach
+        </div>
+        <div class="card" style='pull-right'>
+            <?php echo "Total harga : Rp". $total; ?>
         </div>
     </div>
     @else

@@ -42,7 +42,7 @@ class CartsController extends Controller
         $cart -> cover_image = $request -> input('cover_image');
         $cart -> save();
         //return redirect('/cart') -> with('success', 'Item Added to Cart');
-        return back();
+
         return redirect()->back()->with('success','Item Added to Cart');
 
 

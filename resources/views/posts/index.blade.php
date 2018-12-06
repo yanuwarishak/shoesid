@@ -26,8 +26,7 @@
                                     <h5><a href="/posts/{{$post->id}}">{{$post->title}}</a></h5>
                                     <b>by {{$post -> user -> name}}</b>
                                     <h5 class="font-medium m-b-30"> Harga : {{$post->harga}}</h5>
-                                    <p></p>
-                                        <a style="width:50%" class="btn btn-info btn-sm" href="/posts/{{$post->id}}"> Detail </a>
+                                    <a style="width:50%" class="btn btn-info btn-sm" href="/posts/{{$post->id}}"> Detail </a>
 
                                         <form action="/cart/add" method="POST" >
                                             @csrf
@@ -37,7 +36,7 @@
                                             <input type="hidden" value="{{$post->cover_image}}" name="cover_image">
                                             <input type="hidden" value="{{$post->title}}" name="title">            
                                             <input type="hidden" value="1" name="size">
-                                            <input type="submit" style="width:50%" class="btn btn-info-gradiant" value=" Add to Cart"> 
+                                            <input type="submit" style="width:50%" class="btn btn-info-gradiant" value="Add to Cart"> 
                                         </form>
                                         
                                     <br>
@@ -48,6 +47,7 @@
         </div>
     </div>
 </div> 
+            {{-- Buat Paginate --}}
             {{$posts->links()}}
         @else
             <p>No Product Available</p>
