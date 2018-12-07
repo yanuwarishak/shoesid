@@ -36,7 +36,7 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
-                    <li class="nav-item text-center" style="padding: 0px 10px"><a href="shop-checkout.html" class="nav-link"><i class="fa fa-shopping-cart fa-2x""></i></a></li>
+                    <!-- <li class="nav-item text-center" style="padding: 0px 10px"><a href="shop-checkout.html" class="nav-link"><i class="fa fa-shopping-cart fa-2x""></i></a></li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Masuk') }}</a>
                     </li>
