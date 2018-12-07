@@ -39,7 +39,9 @@
     <link href="{{ asset('css/features/features21-30.css')}}" rel="stylesheet">
     <link href="{{ asset('css/footers/footers.css')}}" rel="stylesheet">
 
-
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/solid.css" integrity="sha384-rdyFrfAIC05c5ph7BKz3l5NG5yEottvO/DQ0dCrwD8gzeQDjYBHNr1ucUpQuljos" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/fontawesome.css" integrity="sha384-u5J7JghGz0qUrmEsWzBQkfvc8nK3fUT7DCaQzNQ+q4oEXhGSx+P2OqjWsfIRB8QT" crossorigin="anonymous">
     <style>
             html, body {
             width: 100%;
@@ -91,7 +93,7 @@
                                 <div class="row">
                                     <!-- Column -->
                                     <div class="col-lg-6 col-md-8">
-                                    <a href="#"><img src="{{asset ("image-assets/blue-logo-text.png")}}" alt="wrapkit" /></a>
+                                    <a href="#"><img src="{{asset ("image-assets/blue-logo-text.png")}}" alt="shoesid" /></a>
                                         <p class="m-t-20">ShoesID – Pusat belanja alas kaki terbesar di Indonesia</p>
                                         <p>ShoesID merupakan pasar sepatu online khusus brand lokal yang memfasilitasi individu maupun pemilik usaha di Indonesia untuk mengelola toko online dan melakukan jual beli secara mudah. ShoesID memberikan pengalaman berbelanja produk alas kaki buatan Indonesia dengan nyaman dan aman. Ayo cintai produk fashion buatan Indonesia ! Bangga dengan produk lokal, bangga dengan karya anak bangsa.</p>
                                     </div>

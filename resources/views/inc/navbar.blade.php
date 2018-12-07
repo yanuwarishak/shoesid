@@ -24,7 +24,11 @@
                     <a class="nav-link" href="/about">About Us</a>  
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Become Seller</a>  
+                {!! Form::open(["action" => "PostsController@search", "method" => "POST", 'enctype' => 'multipart/form-data']) !!}
+                    <div class="form-group">
+                    {{Form::text('search', '', ['class' => 'form-control', 'placeholder' => 'Jangan di search ntar error']) }}
+                    </div>
+                {!! Form::close() !!}
                 </li>
               </ul>
 
