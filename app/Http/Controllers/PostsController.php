@@ -50,7 +50,7 @@ class PostsController extends Controller
     {
         $this -> validate($request, [
             'title' => 'required',
-            'harga' => 'required',
+            'harga' => 'numeric|required',
             'body' => 'required',
             'cover_image' => 'image|nullable|max:1999'
         ]);

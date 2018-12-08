@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Auth;
-Use App\Cart;
+use App\Cart;
 use App\Post;
 use App\User;
 use DB;
 
-class CheckoutsController extends Controller
+class OrdersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +18,13 @@ class CheckoutsController extends Controller
      */
     public function index()
     {
-        //
-        Cart::all();
-        return view('orders.checkout');
+        $orders = null;
+        $user_id = auth() -> user()->id;
+        $user = User::find($user_id);
+        if ($user) {
+            $carts = Cart::where('user_id', $user_id)->get();
+        }
+        return view('orders.orderlist')->with('carts', $carts);
     }
 
     /**
@@ -39,20 +43,9 @@ class CheckoutsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function add(Request $request)
+    public function store(Request $request)
     {
-        //Adding to Order Database
-        $order = new Order;
-        $order -> product_id = $request -> input('barang_id');
-        $cart -> user_id = $request -> input('user_id');
-        $cart -> size = $request -> input('size');
-        $cart -> harga = $request -> input('harga');
-        $cart -> title = $request -> input('title');
-        $cart -> cover_image = $request -> input('cover_image');
-        $cart -> save();
-        //return redirect('/cart') -> with('success', 'Item Added to Cart');
-
-        return redirect()->back()->with('success','Item Added to Cart');
+        //
     }
 
     /**

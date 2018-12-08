@@ -13,7 +13,7 @@
 
         <p>Harga : {{$post->harga}}</p>
         
-        <a style="width:50%" class="btn btn-info-gradiant" href="/posts/checkout"> Checkout </a>
+        <a style="width:50%" class="btn btn-info-gradiant" href="/cart"> Go To Cart </a>
         
         <form action="/cart/add" method="POST" >
             @csrf
