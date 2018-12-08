@@ -38,8 +38,7 @@
     <link href="{{ asset('css/shop/shop.css')}}" rel="stylesheet">
     <link href="{{ asset('css/features/features21-30.css')}}" rel="stylesheet">
     <link href="{{ asset('css/footers/footers.css')}}" rel="stylesheet">
-
-
+    
     <style>
             html, body {
             width: 100%;
@@ -54,7 +53,7 @@
             }
 
             header {
-            padding: 1rem;
+            padding: 2rem;
             }
 
             main {
@@ -73,7 +72,7 @@
 
 <body>
 <article>
-        <div class = "container">
+        <div class = "page-wrapper">
             @include('inc.messages')
             @yield('content')
             <main class="py-4"></main>

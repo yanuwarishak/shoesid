@@ -39,7 +39,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/about">About Us</a>  
                 </li>
-
                     @elseif(Auth::user()-> type == 'admin')
                     <li class="nav-item">
                         <a class="nav-link" href="/dashboard">Dashboard</a>
@@ -48,17 +47,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/about">About Us</a>
                     </li>
-                    
                 @endguest
-
-
-                
               </ul>
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Masuk') }}</a>
                     </li>

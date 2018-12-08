@@ -1,16 +1,32 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-        <div class="banner-innerpage">
-                <div class="container">
-                    <div class="row justify-content-center ">
-                        <div class="col-md-6 align-self-center text-center">
-                            <h1 class="title" style="color:black">Our Best Seller</h1>
-                        </div>
-                    </div>
+
+<div class="container-fluid" >
+    <!-- Static Slider 10  -->
+    <!-- ============================================================== -->
+    <div class="banner-innerpage" style="background-image:url({{asset ("image-assets/banner-bg4.jpg")}})">
+        <div class="container">
+            <!-- Row  -->
+            <div class="row justify-content-center ">
+                <!-- Column -->
+                <div class="col-md-6 align-self-center text-center" >
+                    <h1 class="title"> Pilih Sepatumu! </h1>
                 </div>
+                <div class="spacer"></div>
+                <!-- Column -->
+            </div>
         </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-7 text-center">
+            <h2 class="title">Produk Terbaik </h2>
+        </div>
+    </div>
     <div class="row m-t-30">
         <!-- column  -->
          <div class="col-lg-12">
@@ -18,26 +34,25 @@
                 
                 @if(count($posts) > 0)
                     @foreach ($posts as $post)
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 justify-content-center">
                             <div class="card">
-                                <div class="col-nd-4">
                                     <img style="width:100%" src="/storage/cover_images/{{$post -> cover_image}}">
-                                </div>
                             </div>
-                            <div class="card">
-                                    <h5><a href="/posts/{{$post->id}}">{{$post->title}}</a></h5>
-                                    <b>by {{$post -> user -> name}}</b>
-                                    <h5 class="font-medium m-b-30"> Harga : Rp. {{$post->harga}}</h5>
-                                    <a style="width:50%" class="btn btn-info btn-sm" href="/posts/{{$post->id}}"> Detail </a>
+
+                            <div class="card ">
+                                    <h4 style="text-align:center"><a href="/posts/{{$post->id}}">{{$post->title}}</a></h4>
+                                    <h6 style="text-align:center">by {{$post -> user -> name}}</h6>
+                                    <h5 class="font-medium m-b-30" style="text-align:center"> Harga : Rp. {{$post->harga}}</h5>
+                                    <span class="justify-content-center"><a class="btn waves-effect waves-light btn-outline-secondary" style="width:100%" href="/posts/{{$post->id}}"> Detail </a></span>
 
                                         <form action="/cart/add" method="POST" >
                                             @csrf
                                             <input type="hidden" value="{{$post->id}}" name="barang_id">
                                             <input type="hidden" value="{{$post->harga}}" name="harga">
                                             <input type="hidden" value="{{$post->cover_image}}" name="cover_image">
-                                            <input type="hidden" value="{{$post->title}}" name="title">
-                                            <input type="hidden" value="{{$post->user->name}}" name="toko">           
-                                            <input type="submit" style="width:50%" class="btn btn-info-gradiant" value="Add to Cart"> 
+                                            <input type="hidden" value="{{$post->title}}" name="title">            
+                                             <input type="hidden" value="{{$post->user->name}}" name="toko">  
+                                            <span class="justify-content-center"><input type="submit"  class="btn btn-info-gradiant" style="width:100%" value="Tambahkan Ke Keranjang"></span>
                                         </form>
                                         
                                     <br>
@@ -57,12 +72,11 @@
         @endif
 
         <div class="spacer feature24">
-                <div class="container">
-                    <!-- Row -->
-                    <div class="row justify-content-center">
-                        <div class="col-md-7 text-center">
-                            <h2 class="title">Top Brand</h2>
-                        </div>
+            <div class="container">
+                <!-- Row -->
+                <div class="row justify-content-center">
+                    <div class="col-md-7 text-center">
+                        <h2 class="title">Top Brand</h2>
                     </div>
                     <!-- Row -->
                     <div class="row wrap-feature-24">
@@ -129,9 +143,14 @@
                                 </a>
                             </div>
                         </div>
-                        <!-- Column -->
                     </div>
+                    <!-- Column -->
                 </div>
             </div>
+        </div>
 
+
+
+
+</div>
 @endsection
