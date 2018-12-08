@@ -38,10 +38,7 @@
     <link href="{{ asset('css/shop/shop.css')}}" rel="stylesheet">
     <link href="{{ asset('css/features/features21-30.css')}}" rel="stylesheet">
     <link href="{{ asset('css/footers/footers.css')}}" rel="stylesheet">
-
-    <!-- fontawesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/solid.css" integrity="sha384-rdyFrfAIC05c5ph7BKz3l5NG5yEottvO/DQ0dCrwD8gzeQDjYBHNr1ucUpQuljos" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/fontawesome.css" integrity="sha384-u5J7JghGz0qUrmEsWzBQkfvc8nK3fUT7DCaQzNQ+q4oEXhGSx+P2OqjWsfIRB8QT" crossorigin="anonymous">
+    
     <style>
             html, body {
             width: 100%;
@@ -56,7 +53,7 @@
             }
 
             header {
-            padding: 1rem;
+            padding: 2rem;
             }
 
             main {
@@ -75,7 +72,7 @@
 
 <body>
 <article>
-        <div class = "container">
+        <div class = "page-wrapper">
             @include('inc.messages')
             @yield('content')
             <main class="py-4"></main>

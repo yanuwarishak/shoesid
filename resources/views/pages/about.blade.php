@@ -5,12 +5,6 @@
 
         <div class="container-fluid">
 
-                <div class="container">
-                    <div class="row justify-content-center ">
-                            <h1 class="title">Teams</h1></div>
-                    </div>
-                </div>
-
             <div class="spacer team4">
                 <div class="container">
                     <div class="row justify-content-center m-b-30">
@@ -68,10 +62,15 @@
                             <!-- Row -->
                         </div>
                         <!-- column  -->
+                    </div>
 
+                    <div class="row justify-content-center ">
+                        <h5 style="text-align:center">Jangan beli beneran web ini hanya demi kepentingan tugas kuliah semata
+                        <br>Jangan marah kesamaan produk dan nama toko hanya demi kepentingan tugas kuliah semata
+                        <br>Terimakasih sudah melihat lihat <i class="fa fa-smile"></i> </h5>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+</div>
 @endsection
