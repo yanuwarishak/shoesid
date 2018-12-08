@@ -5,7 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h3 style="text-align:center">Dashboard</h3>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -37,7 +41,9 @@
                         @endforeach
                         
                         @else
+                        <div class="container" class="text-align:center">
                             <p>You don't have any Product</p>
+                        </div>
                     @endif
                     </table>
                     <a href="/posts/create" class="btn btn-primary">Create Post</a>

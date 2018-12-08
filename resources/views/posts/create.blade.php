@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="spacer" style="padding-bottom:30px!important">
         <h1 class="m-t-10 text-center" style="padding-bottom:-20px">Post Produk Baru</h1>
@@ -16,7 +17,7 @@
             </div>
             <div class="col-md-6">
             <div class="form-group">
-                {{Form::label('harga', 'Harga')}}
+                {{Form::label('harga', 'Harga (Hanya Angka e.g : 150000)')}}
                 {{Form::text('harga', '', ['class' => 'form-control', 'placeholder' => 'Harga'])}}
             </div>
             </div>

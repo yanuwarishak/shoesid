@@ -12,7 +12,7 @@
     <link rel="icon" href="{!! asset('image-assets/favicon.png') !!}">
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -82,68 +82,71 @@
         <script>
             CKEDITOR.replace( 'article-ckeditor' );
         </script>
-        <footer>
-            <div class="card bg-light mb-3">
-                <div class="footer1 font-14">
-                        <div class="f1-middle">
-                            <div class="container">
-                                <div class="row">
-                                    <!-- Column -->
-                                    <div class="col-lg-6 col-md-8">
-                                    <a href="#"><img src="{{asset ("image-assets/blue-logo-text.png")}}" alt="shoesid" /></a>
-                                        <p class="m-t-20">ShoesID – Pusat belanja alas kaki terbesar di Indonesia</p>
-                                        <p>ShoesID merupakan pasar sepatu online khusus brand lokal yang memfasilitasi individu maupun pemilik usaha di Indonesia untuk mengelola toko online dan melakukan jual beli secara mudah. ShoesID memberikan pengalaman berbelanja produk alas kaki buatan Indonesia dengan nyaman dan aman. Ayo cintai produk fashion buatan Indonesia ! Bangga dengan produk lokal, bangga dengan karya anak bangsa.</p>
-                                    </div>
-                                    <!-- Column -->
-                                    <!-- Column -->
-                                    <div class="col-lg-3 col-md-4">
-                                        <div class="d-flex no-block m-b-10 m-t-20">
-                                            <div class="display-7 m-r-20 align-self-top"><i class="icon-Location-2"></i></div>
-                                            <div class="info">
-                                                <span class="font-medium text-dark db m-t-5">Shoesid Head Office</span>
-                                                <br/>
-                                                <p>Sleman,
-                                                    <br/>Yogyakarta
-                                                    <br/>Indonesia - 55281</p>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex no-block m-b-10">
-                                            <div class="display-7 m-r-20 align-self-top"><i class="icon-Phone-2"></i></div>
-                                            <div class="info">
-                                                <span class="font-medium text-dark db  m-t-5">1 (888) 123 4567</span>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex no-block m-b-30">
-                                            <div class="display-7 m-r-20 align-self-top"><i class="icon-Mail"></i></div>
-                                            <div class="info">
-                                                <a href="#" class="font-medium text-dark db  m-t-5">info@shoesid.com</a>
-                                            </div>
+</article>
+
+<footer>
+    <div id="footer">
+        <div class="card bg-light mb-3">
+            <div class="footer1 font-14">
+                    <div class="f1-middle">
+                        <div class="container">
+                            <div class="row">
+                                <!-- Column -->
+                                <div class="col-lg-6 col-md-8">
+                                <a href="#"><img src="{{asset ("image-assets/blue-logo-text.png")}}" alt="wrapkit" /></a>
+                                    <p class="m-t-20">ShoesID – Pusat belanja alas kaki terbesar di Indonesia</p>
+                                    <p>ShoesID merupakan pasar sepatu online khusus brand lokal yang memfasilitasi individu maupun pemilik usaha di Indonesia untuk mengelola toko online dan melakukan jual beli secara mudah. ShoesID memberikan pengalaman berbelanja produk alas kaki buatan Indonesia dengan nyaman dan aman. Ayo cintai produk fashion buatan Indonesia ! Bangga dengan produk lokal, bangga dengan karya anak bangsa.</p>
+                                </div>
+                                <!-- Column -->
+                                <!-- Column -->
+                                <div class="col-lg-3 col-md-4">
+                                    <div class="d-flex no-block m-b-10 m-t-20">
+                                        <div class="display-7 m-r-20 align-self-top"><i class="icon-Location-2"></i></div>
+                                        <div class="info">
+                                            <span class="font-medium text-dark db m-t-5">Shoesid Head Office</span>
+                                            <br/>
+                                            <p>Sleman,
+                                                <br/>Yogyakarta
+                                                <br/>Indonesia - 55281</p>
                                         </div>
                                     </div>
-                                    <!-- Column -->
-                                    <!-- Column -->
-                                    <div class="col-lg-3 col-md-12 m-t-5">
-                                        <h6 class="font-medium m-t-20">Produk yang kami sediakan</h6>
-                                        <ul class="general-listing two-part with-arrow m-t-10">
-                                            <li><a href="#"> Slip On</a></li>
-                                            <li><a href="#"> Sneakers</a></li>
-                                            <li><a href="#"> Heels</a></li>
-                                            <li><a href="#"> Flat Shoes</a></li>
-                                            <li><a href="#"> Wedges</a></li>
-                                            <li><a href="#"> Sandal </a></li>
-                                            <li><a href="#"> Sepatu Formal </a></li>
-                                            <li><a href="#"> Boots</a></li>
-                                            <li><a href="#"> Flip Flop </a></li>
-                                            <li><a href="#"> Kaos Kaki</a></li>
-                                        </ul>
+                                    <div class="d-flex no-block m-b-10">
+                                        <div class="display-7 m-r-20 align-self-top"><i class="icon-Phone-2"></i></div>
+                                        <div class="info">
+                                            <span class="font-medium text-dark db  m-t-5">1 (888) 123 4567</span>
+                                        </div>
                                     </div>
+                                    <div class="d-flex no-block m-b-30">
+                                        <div class="display-7 m-r-20 align-self-top"><i class="icon-Mail"></i></div>
+                                        <div class="info">
+                                            <a href="#" class="font-medium text-dark db  m-t-5">info@shoesid.com</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Column -->
+                                <!-- Column -->
+                                <div class="col-lg-3 col-md-12 m-t-5">
+                                    <h6 class="font-medium m-t-20">Produk yang kami sediakan</h6>
+                                    <ul class="general-listing two-part with-arrow m-t-10">
+                                        <li><a href="#"> Slip On</a></li>
+                                        <li><a href="#"> Sneakers</a></li>
+                                        <li><a href="#"> Heels</a></li>
+                                        <li><a href="#"> Flat Shoes</a></li>
+                                        <li><a href="#"> Wedges</a></li>
+                                        <li><a href="#"> Sandal </a></li>
+                                        <li><a href="#"> Sepatu Formal </a></li>
+                                        <li><a href="#"> Boots</a></li>
+                                        <li><a href="#"> Flip Flop </a></li>
+                                        <li><a href="#"> Kaos Kaki</a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>
-    </article>
+        </div>
+</footer>
+
 </body>
 </html>
