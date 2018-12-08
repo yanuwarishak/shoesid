@@ -35,20 +35,19 @@
         <!-- end admin session -->
         <br>
         <!-- tombol add to cart -->
-        
-        <a style="width:50%" class="btn btn-info-gradiant" href="/cart"> Go To Cart </a>
         <form action="/cart/add" method="POST" >
             @csrf
             <input type="hidden" value="{{$post->id}}" name="barang_id">
+            <input type="hidden" value="1" name="user_id">
             <input type="hidden" value="{{$post->harga}}" name="harga">
             <input type="hidden" value="{{$post->cover_image}}" name="cover_image">
             <input type="hidden" value="{{$post->title}}" name="title">            
-            <input type="hidden" value="1" name="size">
+            <input type="hidden" value="{{$post->user->name}}" name="toko">
             <input type="submit" style="width:50%" class="btn btn-info" value=" Add to Cart"> 
         </form>
         <!-- tombol checkout -->
       
-        <a style="width:50%" class="btn waves-effect waves-light btn-outline-success" href="/posts/checkout"> Checkout </a>
+        <a style="width:50%" class="btn waves-effect waves-light btn-outline-success" href="/cart"> Go to Cart </a>
 
         </div>
         

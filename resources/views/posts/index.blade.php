@@ -25,8 +25,8 @@
     <div class="row justify-content-center">
         <div class="col-md-7 text-center">
             <h2 class="title">Produk Terbaik </h2>
-
         </div>
+    </div>
     <div class="row m-t-30">
         <!-- column  -->
          <div class="col-lg-12">
@@ -36,9 +36,7 @@
                     @foreach ($posts as $post)
                         <div class="col-lg-3 justify-content-center">
                             <div class="card">
-                                <div class="col-md-4">
                                     <img style="width:100%" src="/storage/cover_images/{{$post -> cover_image}}">
-                                </div>
                             </div>
 
                             <div class="card ">
