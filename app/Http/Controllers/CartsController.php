@@ -33,13 +33,14 @@ class CartsController extends Controller
         // $
 
         //
+        $id = \Auth::user()->id;
         $cart = new Cart;
         $cart -> product_id = $request -> input('barang_id');
-        $cart -> user_id = $request -> input('user_id');
-        $cart -> size = $request -> input('size');
+        $cart -> user_id = $id;
         $cart -> harga = $request -> input('harga');
         $cart -> title = $request -> input('title');
         $cart -> cover_image = $request -> input('cover_image');
+        $cart -> toko = $request -> input('toko');
         $cart -> save();
         //return redirect('/cart') -> with('success', 'Item Added to Cart');
 
@@ -129,7 +130,10 @@ class CartsController extends Controller
     {
         
     $cart = Cart::find($id);
-    /*
+
+    $cart -> delete();
+    return redirect('/cart') -> with('success', 'Item Removed'); 
+        /*
     *       if(auth() -> user() -> id !==$cart -> user_id){
     *          return redirect('/cart') -> with('error', 'Unauthorized Page');
     *    }
@@ -138,8 +142,6 @@ class CartsController extends Controller
     *      return redirect('/cart') -> with('success', 'Item Removed');
     *
     */
-    $cart -> delete();
-    return redirect('/cart') -> with('success', 'Item Removed'); 
     }
        
 }

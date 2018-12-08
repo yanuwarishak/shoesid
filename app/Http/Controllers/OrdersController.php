@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Checkout;
+use App\Http\Controllers\Auth;
 use App\Cart;
+use App\Post;
+use App\User;
+use App\Order;
+use App\Customer;
 use DB;
 
-class CheckoutsController extends Controller
+class OrdersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +20,13 @@ class CheckoutsController extends Controller
      */
     public function index()
     {
-        //
-        Cart::all();
+        $orders = null;
+        $user_name = auth() -> user()->name;
+        
+        if ($user_name) {
+            $orders = Order::where('toko', $user_name)->get();
+        }
+        return view('orders.orderlist')->with('orders', $orders);
     }
 
     /**

@@ -13,11 +13,13 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
             $table->mediumText('body');
             $table->string('harga');
+            $table->string('cover_image');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

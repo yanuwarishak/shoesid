@@ -26,7 +26,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('created_at','desc') -> paginate(4);
+        $posts = Post::orderBy('created_at','desc') -> paginate(8);
         return view('posts.index')->with('posts', $posts);
     }
 
@@ -50,7 +50,7 @@ class PostsController extends Controller
     {
         $this -> validate($request, [
             'title' => 'required',
-            'harga' => 'required',
+            'harga' => 'numeric|required',
             'body' => 'required',
             'cover_image' => 'image|nullable|max:1999'
         ]);

@@ -4,18 +4,12 @@
 <div class="page-wrapper">
 
         <div class="container-fluid">
-
-                <div class="container">
-                    <div class="row justify-content-center ">
-                            <h1 class="title">Teams</h1></div>
-                    </div>
-                </div>
-
             <div class="spacer team4">
                 <div class="container">
-                    <div class="row justify-content-center m-b-30">
-                        <div class="col-md-7 text-center">
-                            <h2 class="title">SHOESID Team</h2>
+                        <div class="row justify-content-center">
+                            <div class="col-md-7 text-center">
+                                <h2 class="title">SHOES.ID Team</h2>
+                            </div>
                         </div>
                     </div>
                     <div class="row m-t-30">

@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<br>
+<br>
+<br>
         <h1>Post Produk Baru</h1>
         {!! Form::open(["action" => "PostsController@store", "method" => "POST", 'enctype' => 'multipart/form-data']) !!}
             <div class="form-group">
@@ -8,7 +11,7 @@
                 {{Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Title'])}}
             </div>
             <div class="form-group">
-                {{Form::label('harga', 'Harga')}}
+                {{Form::label('harga', 'Harga (Hanya Angka e.g : 150000)')}}
                 {{Form::text('harga', '', ['class' => 'form-control', 'placeholder' => 'Harga'])}}
             </div>
             <div class="form-group">
