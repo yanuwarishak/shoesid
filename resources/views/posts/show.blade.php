@@ -8,7 +8,7 @@
     
     <div class="row">
         <div class="col-md-6">
-            <img style="width:25%" class="pull-right" src="/storage/cover_images/{{$post -> cover_image}}">
+            <img style="width:100%" class="pull-right" src="/storage/cover_images/{{$post -> cover_image}}">
         </div>
         <div class="col-md-6">
             <h3>{{$post->title}}</h3>
