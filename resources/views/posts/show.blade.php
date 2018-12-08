@@ -21,7 +21,7 @@
             <input type="hidden" value="{{$post->harga}}" name="harga">
             <input type="hidden" value="{{$post->cover_image}}" name="cover_image">
             <input type="hidden" value="{{$post->title}}" name="title">            
-            <input type="hidden" value="1" name="size">
+            <input type="hidden" value="{{$post->user->name}}" name="toko">   
             <input type="submit" style="width:50%" class="btn btn-info-gradiant" value=" Add to Cart"> 
         </form>
 

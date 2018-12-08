@@ -21,25 +21,35 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>No </th>
+                                                <th>No</th>
                                                 <th>Tanggal </th>
                                                 <th>Nama</th>
-                                                <th>Order</th>
+                                                <th>Produk</th>
+                                                <th>Ukuran</th>
                                                 <th>Harga </th>
                                                 <th>Alamat </th>
                                                 <th>Keterangan </th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>18-12-12 05:45:15</td>
-                                                <td>Tika </td>
-                                                <td>Sepatu WakWay</td>
-                                                <td>Rp 130.000</td>
-                                                <td>Pogung Kidul, Yogyakarta</td>
-                                                <td><input type="button" class="btn btn-sm btn-success" value="Complete"> </td>
-                                            </tr>
+
+                                            @if(count($orders) > 0)
+                                                @foreach ($orders as $order)
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>{{$order-> created_at}}</td>
+                                                    <td>{{$order-> customer -> nama}}</td>
+                                                    <td>Sepatu WakWay</td>
+                                                    {{-- {{$order-> post -> title}}  --}}
+                                                    <td>{{$order-> size}}</td>
+                                                    <td>Rp 130.000</td>
+                                                    {{-- {{$order-> post -> harga}} --}}
+                                                    <td>{{$order-> customer -> alamat}}Pogung Kidul, Yogyakarta</td>
+                                                    <td><input type="button" class="btn btn-sm btn-success" value="Complete"> </td>
+                                                </tr>
+                                                @endforeach
+                                            @endif
+                                            
                                         </tbody>
                                         <tfoot>
                                             <tr >

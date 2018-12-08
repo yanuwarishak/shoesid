@@ -22,11 +22,9 @@ class CheckoutController extends Controller
     public function index()
     {
         $id = \Auth::user()->id;
-        $orders = null;
-        $user_id = auth() -> user()->id;
-        $user = User::find($user_id);
-        if ($user) {
-            $orders = Order::where('product_id', $user_id)->get();
+        $carts = null;
+        if ($id) {
+            $carts = Cart::where('user_id', $id)->get();
         }
         return view('orders.checkout')->with('carts', $carts);
     }
@@ -84,6 +82,7 @@ class CheckoutController extends Controller
         if ($id) {
             $carts = Cart::where('user_id', $id)->get();
         }
+        
         $data = json_decode($request->getContent(), true);
         $i = 0;
         foreach($carts as $cart)
