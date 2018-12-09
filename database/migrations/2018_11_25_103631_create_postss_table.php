@@ -8,7 +8,7 @@ class CreatePostsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     * Di Rename ke create_products_table error
      * @return void
      */
     public function up()
