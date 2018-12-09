@@ -1,11 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<br>
-<br>
-<br>
+
 <div class="container"  style="margin-top: 100px">
-            <div class="card">
+        <div class="card">
             <div class="modal-body p-0 text-center">
                   <div class="row">
                       <div class="col-lg-7 col-md-5 modal-bg-img">
@@ -15,7 +13,6 @@
             <div class="modal-bg"style='padding-left: 40px'>
             <img src={!! asset ('image-assets/blue-logo-text.png')!!}  alt="wrapkit">
                  <h2 class="font-light text-muted m-t-20 text-center">Login to your account</h2>
-                    <form class="m-t-30">
                         <div class="row">  <div class="col-lg-12">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
