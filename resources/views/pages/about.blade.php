@@ -32,7 +32,7 @@
                 <div class="col-md-12">
                     <div class="p-t-10">
                         <h5 class="title font-medium">Yanuwar Ishak</h5>
-                        <h6 class="subtitle">15/380821/TK/44086</h6>
+                        <h6 class="subtitle">15/385424/TK/44086</h6>
                     </div>
                 </div>
             </div>
