@@ -41,7 +41,7 @@
                 </li>
                     @elseif(Auth::user()-> type == 'admin')
                     <li class="nav-item">
-                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                        <a class="nav-link" href="/dashboard">Products</a>
                     </li>
                     @elseif(Auth::user()-> type == 'default')
                     <li class="nav-item">

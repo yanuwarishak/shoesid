@@ -26,7 +26,7 @@
                                                 <th>Nama</th>
                                                 <th>Produk</th>
                                                 <th>Ukuran</th>
-                                                <th>Harga </th>
+                                                <th style="width:11%">Harga </th>
                                                 <th>Alamat </th>
                                                 <th>Keterangan </th>
                                             </tr>
@@ -67,7 +67,7 @@
                                         </tbody>
                                         <tfoot>
                                             <tr >
-                                                <td colspan="7" style="text-align:right">
+                                                <td colspan="8" style="text-align:right">
                                                 <h6>Total Order : <b>{{$i}}</b> Produk</h6>
                                                 </td>
                                             <tr>

@@ -14,6 +14,7 @@
                     @endif
                     
                     <h3>Your Product</h3>
+                    <?php $i=0;?>
                     @if(count($posts) > 0)
                     <table class="table table-striped">
                         <tr>
@@ -21,23 +22,23 @@
                             <th>Foto Produk</th>
                             <th>Nama Produk</th>
                             <Th>Harga Produk</Th>
-                            <th>Edittt</th>
-                            <Th></Th>
+                            <th style="width:12%">Edit</th>
                         </tr>
 
                         @foreach ($posts as $post)
                             <tr>
-                                <td>{{$post->id}}</td>
+                                <td>{{$i+1}}</td>
                                 <td>{{$post->cover_image}}</td>
                                 <td>{{$post -> title}}</td>
                                 <td>{{$post->harga}}</td>
-                                <td><a href="/posts/{{$post -> id}}/edit" class="btn btn-warning btn-sm "> Edit</a>
-                                    {!!Form::open (['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull-left' ])!!} 
+                                <td><a href="/posts/{{$post -> id}}/edit" class="btn btn-warning btn-sm pull-left"> Edit</a>
+                                    {!!Form::open (['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull-right' ])!!} 
                                     {{Form::hidden ('_method','DELETE')}}
                                     {{Form::submit('Delete', ['class' => 'btn btn-danger btn-sm'])}}
                                     {!!Form::close()!!}    
                                 </td>    
                             </tr>    
+                            <?php $i++;?>
                         @endforeach
                         
                         @else

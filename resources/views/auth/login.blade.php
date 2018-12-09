@@ -7,7 +7,7 @@
             <div class="modal-body p-0 text-center">
                   <div class="row">
                       <div class="col-lg-7 col-md-5 modal-bg-img">
-                      <img src={!! asset ('image-assets/cover.jpg')!!} >
+                      <img src={!! asset ('image-assets/cover.jpg')!!} style="width:100%" >
                     </div>
             <div class="col-lg-5 col-md-7">
             <div class="modal-bg"style='padding-left: 40px'>
@@ -58,7 +58,7 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
+                            <div class="col-md-8 offset-md-3">
                                 <button type="submit" class="btn btn-primary" style= height: 9px; width: 15px;>
                                     {{ __('Login') }}
                                 </button>
