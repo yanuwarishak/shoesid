@@ -40,11 +40,11 @@ class User extends Authenticatable
         return $this -> hasMany('App\Post');
     }
 
-    public function cart(){
+    public function carts(){
         return $this -> hasMany('App\Cart');
     }
 
-    public function order(){
+    public function orders(){
         return $this -> hasMany('App\Order');
     }
 }

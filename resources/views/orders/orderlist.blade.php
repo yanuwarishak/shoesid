@@ -21,30 +21,54 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>No </th>
+                                                <th>No</th>
                                                 <th>Tanggal </th>
                                                 <th>Nama</th>
-                                                <th>Order</th>
-                                                <th>Harga </th>
+                                                <th>Produk</th>
+                                                <th>Ukuran</th>
+                                                <th style="width:11%">Harga </th>
                                                 <th>Alamat </th>
                                                 <th>Keterangan </th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>18-12-12 05:45:15</td>
-                                                <td>Tika </td>
-                                                <td>Sepatu WakWay</td>
-                                                <td>Rp 130.000</td>
-                                                <td>Pogung Kidul, Yogyakarta</td>
-                                                <td><input type="button" class="btn btn-sm btn-success" value="Complete"> </td>
-                                            </tr>
+                                            <?php $i=0;?>
+                                            @if(count($orders) > 0)
+                                                @foreach ($orders as $order)
+                                                <tr>
+                                                    <td>{{$i+1}}</td>
+                                                    <td>{{$order->created_at}}</td>
+                                                    <td>{{$order->customer->nama}}</td>
+                                                    {{-- {{$order-> customer -> nama}} --}}
+                                                    <td>{{$order-> post['title']}}</td>
+                                                    {{-- {{$order-> post -> title}}  --}}
+                                                    <td>{{$order-> size}}</td>
+                                                    <td>Rp. {{$order-> post['harga']}}</td>
+                                                    {{-- {{$order-> post -> harga}} --}}
+                                                    <td>{{$order->customer->alamat}}</td>
+                                                    {{--  --}}
+                                                    <td>
+                                                        {!!Form::open (['action' => ['OrdersController@destroy', $order->id], 'method' => 'POST', 'class' => 'pull-right' ])!!} 
+                                                        {{Form::hidden ('_method','DELETE')}}
+                                                        {{Form::submit('Complete Order', ['class' => 'btn btn-danger'])}}
+                                                        {!!Form::close()!!}    
+                                                    </td>
+                                                </tr>
+                                                <?php $i++;?>
+                                                @endforeach
+
+                                                @else
+                                                <td>
+                                                    You don't have any Order 
+                                                </td>
+
+                                            @endif
+                                            
                                         </tbody>
                                         <tfoot>
                                             <tr >
-                                                <td colspan="7" style="text-align:right">
-                                                <h6>Total Order : <b>10</b> Produk</h6>
+                                                <td colspan="8" style="text-align:right">
+                                                <h6>Total Order : <b>{{$i}}</b> Produk</h6>
                                                 </td>
                                             <tr>
                                         </tfoot>
@@ -56,5 +80,7 @@
                 </div>
             </div>
         </div>
+    </div>
 </div>
+
 @endsection

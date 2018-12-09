@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Auth;
 use App\Cart;
-use App\Post;
 use App\User;
+use App\Order;
+use App\Customer;
+use App\Post;
 use DB;
 
 class OrdersController extends Controller
@@ -19,12 +21,13 @@ class OrdersController extends Controller
     public function index()
     {
         $orders = null;
-        $user_id = auth() -> user()->id;
-        $user = User::find($user_id);
-        if ($user) {
-            $carts = Cart::where('user_id', $user_id)->get();
+        $customers = null;
+        $user_name = auth() -> user()->name;
+        
+        if ($user_name) {
+            $orders = Order::where('toko', $user_name)->get();
         }
-        return view('orders.orderlist')->with('carts', $carts);
+       return view('orders.orderlist')->with('orders', $orders);
     }
 
     /**
@@ -90,6 +93,8 @@ class OrdersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $order = Order::find($id);
+        $order -> delete();
+        return redirect('/order') -> with('success', 'Order Completed');
     }
 }

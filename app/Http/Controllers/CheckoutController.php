@@ -10,6 +10,7 @@ use App\Post;
 use App\User;
 use App\Order;
 use App\Customer;
+use App\CustomerOrder;
 use DB;
 
 class CheckoutController extends Controller
@@ -21,14 +22,18 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-        $id = \Auth::user()->id;
-        $orders = null;
-        $user_id = auth() -> user()->id;
-        $user = User::find($user_id);
-        if ($user) {
-            $orders = Order::where('product_id', $user_id)->get();
+        if(!request()->is('/checkout') && url()->previous() != url('/cart')){
+            return redirect()->to('/cart');
         }
-        return view('orders.checkout')->with('carts', $carts);
+
+        $id = \Auth::user()->id;
+        $carts = null;
+        if ($id) {
+            $carts = Cart::where('user_id', $id)->get();
+        }
+        $sizeOfCarts = count($carts);
+        $orders = Order::orderBy('id', 'desc')->take($sizeOfCarts)->get();
+        return view('orders.checkout')->with('carts', $carts)->with('orders', $orders);
     }
 
     /**
@@ -49,25 +54,33 @@ class CheckoutController extends Controller
      */
     public function add(Request $request)
     {
-            //Adding to Order Database
-            $this -> validate($request, [
-                'nama' => 'required',
-                'kode_pos' => 'required',
-                'alamat' => 'required',
-                'telepon' => 'required',
-            ]);
-            
-            //Create Customer Record
-                $id = \Auth::user()->id;
-                $customer = new Customer;
-                $customer -> user_id = $id;
-                $customer -> nama = $request -> input('nama');
-                $customer -> kode_pos = $request -> input('kode_pos');
-                $customer -> alamat = $request -> input('alamat');
-                $customer -> telepon = $request -> input('telepon');
-                $customer -> save();
-    
-                return view('orders.success');
+        //Adding to Order Database
+        $this -> validate($request, [
+            'nama' => 'required',
+            'kode_pos' => 'required',
+            'alamat' => 'required',
+            'telepon' => 'required',
+        ]);
+
+        $orders = $request->get('orders');
+
+        // $carts = $request
+        
+        //Create Customer Record
+        $id = \Auth::user()->id;
+        $customer = new Customer;
+        $customer -> user_id = $id;
+        $customer -> nama = $request -> input('nama');
+        $customer -> kode_pos = $request -> input('kode_pos');
+        $customer -> alamat = $request -> input('alamat');
+        $customer -> telepon = $request -> input('telepon');
+        $customer -> save();
+        $customer = Customer::all()->last();
+        foreach ($orders as $order) {
+            Order::where('id', $order)->update(['customer_id' => $customer->id]);
+        }
+        Cart::where('user_id', $id)->delete();
+        return view('orders.success');
     }
 
     /**
@@ -84,24 +97,21 @@ class CheckoutController extends Controller
         if ($id) {
             $carts = Cart::where('user_id', $id)->get();
         }
+        
         $data = json_decode($request->getContent(), true);
         $i = 0;
         foreach($carts as $cart)
         {
             $order = new Order;
-            $order -> product_id = $data[$i]['productId'];
-            $order -> user_id = $id;
-            $order -> size = $data[$i]['size'];
-            $order -> toko = $data[$i]['toko'];
-            $order -> save();
+            $order->product_id = $data[$i]['productId'];
+            $order->user_id = $id;
+            $order->size = $data[$i]['size'];
+            $order->toko = $data[$i]['toko'];
+            $order->customer_id = 0;
+            $order->save();
             $i++;
         }
-        //return redirect('/cart') -> with('success', 'Item Added to Cart');
-        // dd(json_decode($request->getContent(), true));
-        // dd(json_decode($request->getContent(), true));
-        // echo ($data);
-        return view('orders.checkout')->with('carts', $carts);
-        // echo($request);
+        
     }
 
     /**

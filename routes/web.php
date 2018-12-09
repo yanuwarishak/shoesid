@@ -25,7 +25,7 @@ Auth::routes();
 //Cart Controller
 Route::get('/cart','CartsController@show');
 Route::post('/cart/add','CartsController@add');
-Route::delete('/cart/delete','CartsController@destroy');
+Route::delete('/cart/delete/{id}','CartsController@destroy');
 Route::resource('carts','CartsController');
 
 //Checkout Controller
@@ -36,6 +36,7 @@ Route::resource('checkout','CheckoutController');
 
 //Order Controller
 Route::get('/order','OrdersController@index');
+Route::resource('order','OrdersController');
 
 
 //Dashboard Controller
