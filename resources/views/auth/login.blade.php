@@ -1,17 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<br>
-<br>
-<br>
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
+<div class="container"  style="margin-top: 100px">
+        <div class="card">
+            <div class="modal-body p-0 text-center">
+                  <div class="row">
+                      <div class="col-lg-7 col-md-5 modal-bg-img">
+                      <img src={!! asset ('image-assets/cover.jpg')!!} >
+                    </div>
+            <div class="col-lg-5 col-md-7">
+            <div class="modal-bg"style='padding-left: 40px'>
+            <img src={!! asset ('image-assets/blue-logo-text.png')!!}  alt="wrapkit">
+                 <h2 class="font-light text-muted m-t-20 text-center">Login to your account</h2>
+                        <div class="row">  <div class="col-lg-12">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -57,7 +59,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" style= height: 9px; width: 15px;>
                                     {{ __('Login') }}
                                 </button>
 

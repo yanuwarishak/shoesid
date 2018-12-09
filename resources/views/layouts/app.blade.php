@@ -127,7 +127,7 @@
                                 <!-- Column -->
                                 <!-- Column -->
                                 <div class="col-lg-3 col-md-12 m-t-5">
-                                    <h6 class="font-medium m-t-20">Produk yang kami sediakan</h6>
+                                    <h6 class="font-medium m-t-20">Produk yang kami sediakan cuma buat hiasan</h6>
                                     <ul class="general-listing two-part with-arrow m-t-10">
                                         <li><a href="#"> Slip On</a></li>
                                         <li><a href="#"> Sneakers</a></li>
