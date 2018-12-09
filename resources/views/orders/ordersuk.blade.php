@@ -19,6 +19,7 @@
                         <img src="{{asset ("image-assets/sukses.gif")}}" style="height:300px" alt="succeed" />
                     </div>
                     <div class="row justify-content-sm-center">
+                        <p>Transfer uang mu ke Rekening : XXXXXXXXXXXXX A/N XXXXXXXXXXXXX</p>
                         <a href="/" class="btn btn-secondary"><i class="fa fa-arrow-left"></i>  Ayo Belanja Lagi  </a>
                     </div>
                     <br>

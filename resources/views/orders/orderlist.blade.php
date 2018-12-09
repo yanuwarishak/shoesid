@@ -32,29 +32,43 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-
+                                            <?php $i=0;?>
                                             @if(count($orders) > 0)
                                                 @foreach ($orders as $order)
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>{{$order-> created_at}}</td>
-                                                    <td>{{$order-> customer -> nama}}</td>
-                                                    <td>Sepatu WakWay</td>
+                                                    <td>{{$i+1}}</td>
+                                                    <td>{{$order->created_at}}</td>
+                                                    <td>{{$order->customer->nama}}</td>
+                                                    {{-- {{$order-> customer -> nama}} --}}
+                                                    <td>{{$order-> post['title']}}</td>
                                                     {{-- {{$order-> post -> title}}  --}}
                                                     <td>{{$order-> size}}</td>
-                                                    <td>Rp 130.000</td>
+                                                    <td>Rp. {{$order-> post['harga']}}</td>
                                                     {{-- {{$order-> post -> harga}} --}}
-                                                    <td>{{$order-> customer -> alamat}}Pogung Kidul, Yogyakarta</td>
-                                                    <td><input type="button" class="btn btn-sm btn-success" value="Complete"> </td>
+                                                    <td>{{$order->customer->alamat}}</td>
+                                                    {{--  --}}
+                                                    <td>
+                                                        {!!Form::open (['action' => ['OrdersController@destroy', $order->id], 'method' => 'POST', 'class' => 'pull-right' ])!!} 
+                                                        {{Form::hidden ('_method','DELETE')}}
+                                                        {{Form::submit('Complete Order', ['class' => 'btn btn-danger'])}}
+                                                        {!!Form::close()!!}    
+                                                    </td>
                                                 </tr>
+                                                <?php $i++;?>
                                                 @endforeach
+
+                                                @else
+                                                <td>
+                                                    You don't have any Order 
+                                                </td>
+
                                             @endif
                                             
                                         </tbody>
                                         <tfoot>
                                             <tr >
                                                 <td colspan="7" style="text-align:right">
-                                                <h6>Total Order : <b>10</b> Produk</h6>
+                                                <h6>Total Order : <b>{{$i}}</b> Produk</h6>
                                                 </td>
                                             <tr>
                                         </tfoot>

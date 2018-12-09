@@ -26,8 +26,8 @@
                                 @if(!Auth::guest())
                                     @if(Auth::user()-> id == $cart -> user_id)
                                         {!!Form::open (['action' => ['CartsController@destroy', $cart->id], 'method' => 'DELETE', 'class' => 'pull-right' ])!!} 
-                                        {{Form::hidden ('_method','DELETE')}}
-                                        {{Form::submit('Delete From Cart', ['class' => 'btn btn-danger'])}}
+                                            {{Form::hidden ('_method','DELETE')}}
+                                            {{Form::submit('Delete From Cart', ['class' => 'btn btn-danger btn-delete', 'id' => $cart->id])}}
                                         {!!Form::close()!!}
                                     @endif
                                 @endif
@@ -77,17 +77,27 @@
         let cartSizes = $('.cart-size');
         let cartProductIds = $('.cart-product-id');
         let cartTokos = $('.cart-toko');
+        let btnDelete = $('.btn-delete');
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+        
+        $('.btn-delete').click(function(event) {
+            event.preventDefault();
+            let cartId = $(this).attr('id');
+            $.ajax({
+                type: "DELETE",
+                url: "/cart/delete/" + cartId,
+                complete: function(response) {
+                    window.location.replace('/cart');
+                }
+            });
+        })
 
         $('#btn-submit').click(function(event) {
             event.preventDefault();
-            console.log(cartSizes);
-            console.log(cartProductIds);
-            console.log(cartTokos);
             let data = [];
             for (let i=0;i<cartSizes.length;i++) {
                 let product = {};
@@ -104,9 +114,7 @@
                 contentType: "application/json",
                 processData: false,
                 success : function(response) {
-                    console.log(response);
-                    $('html').empty();
-                    $('html').html(response);
+                    window.location.replace('/checkout');
                 }
             });
         });

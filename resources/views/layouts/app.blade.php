@@ -71,9 +71,10 @@
 @include('inc.navbar')
 
 <body>
+        
 <article>
         <div class = "page-wrapper">
-            @include('inc.messages')
+ 
             @yield('content')
             <main class="py-4"></main>
         </div>

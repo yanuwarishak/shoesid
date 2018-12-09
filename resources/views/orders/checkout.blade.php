@@ -35,7 +35,6 @@
                                         {{Form::text('telepon', '', ['class' => 'form-control', 'placeholder' => 'Nomer Telepon'])}}
                                         </div>
                                         {{Form::submit('Checkout', ['class' => 'btn btn-primary'])}}
-                                    {!! Form::close() !!}
                                 </div>
                             </div>
                             <!-- column  -->
@@ -47,8 +46,11 @@
                                         <th class="b-0 text-right">Harga</th>
                                     </tr>
                                     <?php $total=0; ?>
+                                    <?php $i = 0; ?>
                                     @if(count($carts) > 0)
                                         @foreach ($carts as $cart)
+                                        <input type="hidden" name="orders[{{ $i }}]" value="{{$orders[$i]->id}}">
+                                        {{-- {{Form::hidden('cart[' . $i . ']', $cart->id)}} --}}
                                         <?php $total += $cart->harga; ?>
                                             <tr>
                                                 <td><img src="/storage/cover_images/{{$cart -> cover_image}}" width="100" alt="wrapkit" /></td>
@@ -60,9 +62,11 @@
                                                     <h5 class="font-medium m-b-30"> {{$cart->harga}} </h5>
                                                 </td>
                                             </tr>
+                                        <?php $i++ ?>
                                         @endforeach
                                     @endif
-
+                                
+                                    {!! Form::close() !!}
                                     <tr>
                                         <td colspan="3">
                                             <div class="d-flex">

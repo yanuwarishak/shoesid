@@ -18,10 +18,10 @@ class Order extends Model
     }
 
     public function post(){
-        return $this -> belongsTo('App\Post');
+        return $this -> belongsTo('App\Post','product_id');
     }
 
     public function customer(){
-        return $this -> hasOne('App\Customer');
+        return $this -> belongsTo('App\Customer');
     }
 }

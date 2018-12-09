@@ -43,8 +43,8 @@ class CartsController extends Controller
         $cart -> toko = $request -> input('toko');
         $cart -> save();
         //return redirect('/cart') -> with('success', 'Item Added to Cart');
-
         return redirect()->back()->with('success','Item Added to Cart');
+        
 
 
     }
@@ -129,10 +129,10 @@ class CartsController extends Controller
     public function destroy($id)
     {
         
-    $cart = Cart::find($id);
+        $cart = Cart::find($id);
 
-    $cart -> delete();
-    return redirect('/cart') -> with('success', 'Item Removed'); 
+        $cart -> delete();
+        return redirect('/cart') -> with('success', 'Item Removed'); 
         /*
     *       if(auth() -> user() -> id !==$cart -> user_id){
     *          return redirect('/cart') -> with('error', 'Unauthorized Page');

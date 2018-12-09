@@ -20,6 +20,7 @@
     </div>
 </div>
 
+@include('inc.messages')
 <div class="container">
 
     <div class="row justify-content-center">
