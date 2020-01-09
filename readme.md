@@ -16,6 +16,7 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 - Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
 - Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
 - Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+Bruh this project hold so many memories not gonna lie, lol how time files, I won't say that I wish I could go back in that time, but for sure if time travel were real I'll go back to it even a thousand time.
 - [Robust background job processing](https://laravel.com/docs/queues).
 - [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
